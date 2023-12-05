@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+def lovaton(l, n):
+    t = np.linspace(0, 2*np.pi, 100)
+    r = 1
+    x = l + r * np.cos(t)
+    y = n + r * np.sin(t)
+    return x, y
+
+def dharon(s, e):
+    t = np.linspace(0, 2*np.pi, 100)
+    r = 1
+    x = s + r * np.cos(t)
+    y = e + r * np.sin(t)
+    return x, y
+
+def baton(k, e):
+    t = np.linspace(0, 2*np.pi, 100)
+    r = 1
+    x = k + r * np.cos(t)
+    y = e + r * np.sin(t)
+    return x, y
+
+fig, ax = plt.subplots()
+ax.set_aspect('equal')
+
+ax.plot(*lovaton(1, 1), color='blue')
+ax.plot(*dharon(3, 1), color='green')
+ax.plot(*baton(5, 1), color='red')
+
+ax.set_xticks([])
+ax.set_yticks([])
+
+plt.show()
